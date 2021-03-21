@@ -1,19 +1,15 @@
 package algorithm;
 
 import java.util.*;
+import java.io.*;
 public class Main {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        int arr[] = new int[x];
-        for (int i = 0; i < x; i++) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            arr[i] = a + b;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        HashSet<Integer> h = new HashSet<Integer>();
+        for (int i = 0; i < 10; i++) {
+            h.add(Integer.parseInt(br.readLine()) % 42);
         }
-        sc.close();
-        for (int a : arr) {
-            System.out.println(a);
-        }
+        br.close();
+        System.out.print(h.size());
     }
 }
